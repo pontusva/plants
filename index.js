@@ -13,7 +13,11 @@ const corsOptions = {
 
 const uri = process.env.ATLAS_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true });
+// mongoose.connect(uri, { useNewUrlParser: true });
+
+const connectDB = async () => {
+  mongoose.connect(uri, { useNewUrlParser: true });
+};
 
 const database = mongoose.connection;
 
@@ -36,6 +40,8 @@ app.use(cors(corsOptions)); // Use this after the variable declaration
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server Started at ${3000}`);
+connectDB.then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server Started at ${3000}`);
+  });
 });
