@@ -25,6 +25,7 @@ database.once('connected', () => {
   console.log('Database Connected');
 });
 
+// push
 const app = express();
 
 app.use(express.json());
