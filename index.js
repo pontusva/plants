@@ -40,7 +40,7 @@ app.use(cors(corsOptions)); // Use this after the variable declaration
 
 const PORT = process.env.PORT || 3000;
 
-connectDB.then(() => {
+connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server Started at ${3000}`);
   });
