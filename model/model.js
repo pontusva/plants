@@ -13,7 +13,7 @@ const dataSchema = new mongoose.Schema(
           required: true,
           type: String,
         },
-        vetensakpligtNamn: {
+        vetenskapligtnamn: {
           required: true,
           type: String,
         },

@@ -11,10 +11,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-const uri =
-  'mongodb+srv://pontus:pg66ZAc9jvnYqdzP@plants.vohijne.mongodb.net/test'; //process.env.ATLAS_URI;
-
-// mongoose.connect(uri, { useNewUrlParser: true });
+const uri = process.env.ATLAS_URI;
 
 const connectDB = async () => {
   mongoose.connect(uri, { useNewUrlParser: true });
