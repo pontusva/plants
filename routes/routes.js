@@ -13,28 +13,40 @@ var corsOptions = {
 router.post('/post', cors(corsOptions), async (req, res) => {
   const data = new Model({
     namn: req.body.namn,
-    kategori: req.body.kategori,
-    vetenskapligtNamn: req.body.vetenskapligtNamn,
-    vaxtfamilj: req.body.vaxtfamilj,
-    vaxtplats: req.body.vaxtplats,
-    typAvJord: req.body.typAvJord,
-    forodling: req.body.forodling,
-    direktsadd: req.body.direktsadd,
-    talAntalMinusgrader: req.body.talAntalMinusgrader,
-    dagarSaddSkord: req.body.dagarSaddSkord,
-    dagarSaddUtplantering: req.body.dagarSaddUtplantering,
-    DagarGrotid: req.body.DagarGrotid,
-    procentGrobarhet: req.body.procentGrobarhet,
-    lagstaGrotemperatur: req.body.lagstaGrotemperatur,
-    plantavstand: req.body.plantavstand,
-    radavstand: req.body.radavstand,
-    sadjup: req.body.sadjup,
-    hojd: req.body.hojd,
-    talHalvskuggigtLage: req.body.talHalvskuggigtLage,
-    vattenbehov: req.body.vattenbehov,
-    naringsbehov: req.body.naringsbehov,
-    kommerIgenEfterSkord: req.body.kommerIgenEfterSkord,
-    img: req.body.img,
+    info: [
+      {
+        kategori: req.body.kategori,
+        vetensakpligtNamn: req.body.vetensakpligtNamn,
+        vaxtfamilj: req.body.vaxtfamilj,
+        typ: req.body.typ,
+        hojd: req.body.hojd,
+      },
+    ],
+    behov: [
+      {
+        vaxtplats: req.body.vaxtplats,
+        lage: req.body.lage,
+        jordtyp: req.body.jordtyp,
+        vattenbehov: req.body.vattenbehov,
+        naringsbehov: req.body.naringsbehov,
+        frosttalig: req.body.frosttalig,
+      },
+    ],
+    odla: [
+      {
+        direktsadd: req.body.direktsadd,
+        forodling: req.body.forodling,
+        satid: req.body.satid,
+        grotid: req.body.grotid,
+        grotemperatur: req.body.grotemperatur,
+        saddTillUtplantering: req.body.saddTillUtplantering,
+        plantavstand: req.body.plantavstand,
+        radavstand: req.body.radavstand,
+        sadjup: req.body.sadjup,
+        dagarFranSaddTillSkord: req.body.dagarFranSaddTillSkord,
+        blomtid: req.body.blomtid,
+      },
+    ],
   });
 
   try {
