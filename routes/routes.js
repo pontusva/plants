@@ -15,11 +15,11 @@ router.post('/post', cors(corsOptions), async (req, res) => {
     namn: req.body.namn,
     info: [
       {
-        kategori: req.body.kategori,
-        vetensakpligtNamn: req.body.vetensakpligtNamn,
-        vaxtfamilj: req.body.vaxtfamilj,
-        typ: req.body.typ,
-        hojd: req.body.hojd,
+        kategori: req.body.info.kategori,
+        vetensakpligtNamn: req.body.info.vetensakpligtNamn,
+        vaxtfamilj: req.body.info.infovaxtfamilj,
+        typ: req.body.info.typ,
+        hojd: req.body.info.hojd,
       },
     ],
     behov: [
