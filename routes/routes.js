@@ -17,7 +17,7 @@ router.post('/post', cors(corsOptions), async (req, res) => {
       {
         kategori: req.body.info.kategori,
         vetensakpligtNamn: req.body.info.vetensakpligtNamn,
-        vaxtfamilj: req.body.info.infovaxtfamilj,
+        vaxtfamilj: req.body.info.vaxtfamilj,
         typ: req.body.info.typ,
         hojd: req.body.info.hojd,
       },
@@ -52,6 +52,7 @@ router.post('/post', cors(corsOptions), async (req, res) => {
   try {
     const dataToSave = await data.save();
     res.status(200).json(dataToSave);
+    console.log(req.body);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -62,6 +63,7 @@ router.get('/getAll', cors(corsOptions), async (req, res) => {
   try {
     const data = await Model.find().sort({ namn: 1 });
     res.json(data);
+    console.log(req.body);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
