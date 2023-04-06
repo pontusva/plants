@@ -48,7 +48,7 @@ router.post('/post', cors(corsOptions), async (req, res) => {
 //Get all Method
 router.get('/getAll', cors(corsOptions), async (req, res) => {
   try {
-    const data = await Model.find().sort({ title: 1 });
+    const data = await Model.find().sort({ namn: 1 });
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
